@@ -22,10 +22,9 @@ public class UserCustomerController {
     @GetMapping("/usercustomersget")
     public Result list(){
         log.info("查询所有的顾客账号");
-        List<UserCustomer> usercustomerlist=userCustomerService.list();
-        return Result.success(usercustomerlist);
+        List<UserCustomer> userCustomerList =userCustomerService.list();
+        return Result.success(userCustomerList);
     }
-
 
 
     //增
