@@ -11,7 +11,7 @@ import java.util.List;
 public interface UserCustomerMapper {
 
     //查询所有客户的信息
-    @Select("select cus_id, cus_name, cus_gender, cus_telnum, cus_email, cus_uid, cus_pwd, cus_payPwd, cus_balance, cus_status from customer")
+    @Select("select cus_id, cus_name, cus_gender, cus_telnum, cus_email, cus_uid, cus_pwd, cus_payPwd, cus_balance, cus_status from TTMS.customer")
     List<UserCustomer> list();
 
 }

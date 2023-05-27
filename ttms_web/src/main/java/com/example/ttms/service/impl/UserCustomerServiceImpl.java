@@ -10,19 +10,23 @@ import java.util.List;
 
 @Service
 public class UserCustomerServiceImpl implements UserCustomerService {
-
-
     @Autowired
     private UserCustomerMapper userCustomerMapper;
-
+    /**
+     * 查询所有顾客
+     * @return
+     */
     @Override
     public List<UserCustomer> list(){
-        List<UserCustomer> userCustomerList =userCustomerMapper.list();
-        return userCustomerList;
+//         List<UserCustomer> userCustomerList =userCustomerMapper.list();
+//        System.out.println(userCustomerMapper.list()+"000000000000000000000000000");
+        return userCustomerMapper.list();
     }
 
-    @Override
-    public void add(UserCustomer userCustomer){
+//    @Override
+//    public void add(UserCustomer userCustomer){
+//
+//    }
 
-    }
+
 }
