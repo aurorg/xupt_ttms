@@ -12,9 +12,10 @@ import java.util.List;
 public class UserCustomerServiceImpl implements UserCustomerService {
     @Autowired
     private UserCustomerMapper userCustomerMapper;
+
+
     /**
      * 查询所有顾客
-     * @return
      */
     @Override
     public List<UserCustomer> list(){
@@ -23,10 +24,17 @@ public class UserCustomerServiceImpl implements UserCustomerService {
         return userCustomerMapper.list();
     }
 
-//    @Override
-//    public void add(UserCustomer userCustomer){
-//
-//    }
+    /**
+     * 顾客注册账户
+     * @param userCustomer
+     */
+    @Override
+    public void add(UserCustomer userCustomer){
+        userCustomer.setCusBalance(0.00);
+        userCustomer.setCusStatus(1);
+
+        userCustomerMapper.insert(userCustomer);
+    }
 
 
 }

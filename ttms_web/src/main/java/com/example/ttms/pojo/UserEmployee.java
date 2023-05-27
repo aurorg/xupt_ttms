@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserEmployee {
-    private  Integer emp_id; //主键
-    private String emp_role;
-    private String emp_no;
-    private String emp_name;
-    private Integer emp_gender;
+    private  Integer empId; //主键
+    private String empRole;
+    private String empNo;
+    private String empName;
+    private Integer empGender;
     private String phone;
     private String email;
-    private String emp_pwd;
-    private String emp_status;
+    private String empPwd;
+    private String empStatus;
 }
