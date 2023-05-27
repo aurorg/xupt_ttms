@@ -37,4 +37,14 @@ public class UserCustomerServiceImpl implements UserCustomerService {
     }
 
 
+    /**
+     *
+     * @param id
+     */
+    @Override
+    public void delete(Integer id){
+        userCustomerMapper.deleteById(id);
+    }
+
+
 }

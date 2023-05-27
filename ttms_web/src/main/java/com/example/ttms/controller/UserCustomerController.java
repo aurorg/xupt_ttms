@@ -5,10 +5,7 @@ import com.example.ttms.pojo.UserCustomer;
 import com.example.ttms.service.UserCustomerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,12 +18,12 @@ public class UserCustomerController {
    @Autowired
     private UserCustomerService userCustomerService;
 
-    /**查
-     * 查询顾客账号
+   /**查
+     * 员工查询顾客账号
      */
     @GetMapping("/usercustomersget")
     public Result list(){
-        log.info("查询所有的顾客账号");
+        log.info("员工查询所有的顾客账号");
         //调用Service查询部门数据
         List<UserCustomer> userCustomerList =userCustomerService.list();
         return Result.success(userCustomerList);
@@ -43,6 +40,14 @@ public class UserCustomerController {
         return Result.success();
     }
 
+    @DeleteMapping( "/usercustomersdelete/{id}")
+    public Result delete(@PathVariable Integer id){
+        log.info("员工根据id删除顾客账号：{}",id);
+        //调用Service删除顾客账号
+        userCustomerService.delete(id);
+        return Result.success();
+    }
+
 
 
 
@@ -50,23 +55,9 @@ public class UserCustomerController {
 
 
 
-//增
-//    @PostMapping("/usercustomerpost")
-//    public Result add(@RequestBody UserCustomer userCustomer){
-//        //记录日志
-//        log.info("客户注册账号：{}",userCustomer);
-//        //调用service的添加功能
-//        userCustomerService.add(userCustomer);
-//        //响应
-//        return Result.success();
-//    }
-
-
-//删
 
 
 
-//改
 
 
 

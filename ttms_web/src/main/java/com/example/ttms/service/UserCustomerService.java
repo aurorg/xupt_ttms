@@ -15,6 +15,9 @@ public interface UserCustomerService {
     List<UserCustomer> list();
 
 
-
+    //
     void add(UserCustomer userCustomer);
+
+
+    void delete(Integer id);
 }
