@@ -4,10 +4,11 @@ import com.example.ttms.dao.UserCustomerMapper;
 import com.example.ttms.pojo.UserCustomer;
 import com.example.ttms.service.UserCustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
-
 @Service
 public class UserCustomerServiceImpl implements UserCustomerService {
     @Autowired
@@ -19,9 +20,20 @@ public class UserCustomerServiceImpl implements UserCustomerService {
      */
     @Override
     public List<UserCustomer> list(){
-//         List<UserCustomer> userCustomerList =userCustomerMapper.list();
+         List<UserCustomer> userCustomerList =userCustomerMapper.list();
 //        System.out.println(userCustomerMapper.list()+"000000000000000000000000000");
-        return userCustomerMapper.list();
+
+         userCustomerList.stream().forEach(userCustomer -> {
+                    //处理 gender 1: 男, 2: 女
+                    String gender = userCustomer.getCusGender();
+                    if("1".equals(gender)){
+                        userCustomer.setCusGender("男");
+                    }else if("2".equals(gender)){
+                        userCustomer.setCusGender("女");
+                    }
+         });
+//        return userCustomerMapper.list();
+        return userCustomerList;
     }
 
     /**

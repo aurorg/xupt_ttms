@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class UserCustomer {
     private Integer cusId;  //主键
     private String cusName;  //姓名
-    private Integer cusGender;  //性别
+    private String cusGender;  //性别
     private String cusTelnum;  //电话
     private String cusEmail;   //邮箱
     private String cusUid;     //用户名
