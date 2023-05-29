@@ -29,7 +29,7 @@ public class UserCustomerController {
         return Result.success();
     }
 
-    /**
+    /**删
      * 员工根据id删除顾客账号
      * @param id
      * @return
@@ -39,6 +39,20 @@ public class UserCustomerController {
         log.info("员工根据id删除顾客账号：{}",id);
         //调用Service删除顾客账号
         userCustomerService.delete(id);
+        return Result.success();
+    }
+
+
+    /**
+     * 改
+     * @param userCustomer
+     * @return
+     */
+    @PutMapping("/usercustomersput")
+    public Result update(@RequestBody UserCustomer userCustomer){
+        log.info("根据id顾客修改自己的个人信息：{}",userCustomer);
+        //调用Service修改顾客信息
+        userCustomerService.update(userCustomer);
         return Result.success();
     }
 

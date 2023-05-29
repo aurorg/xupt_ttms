@@ -2,10 +2,7 @@ package com.example.ttms.dao;
 
 
 import com.example.ttms.pojo.UserCustomer;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -34,5 +31,9 @@ public interface UserCustomerMapper {
      */
     @Delete("delete from TTMS.customer where cus_id=#{id}")
     void deleteById(Integer id);
+
+
+    @Update("update TTMS.customer set cus_name=#{cusName},cus_gender=#{cusGender},cus_telnum = #{cusTelnum},cus_email = #{cusEmail},cus_uid = #{cusUid},cus_pwd = #{cusPwd} WHERE cus_id = #{cusId}")
+    void update(UserCustomer userCustomer);
 
 }

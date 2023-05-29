@@ -37,6 +37,22 @@ public class UserCustomerServiceImpl implements UserCustomerService {
     }
 
     /**
+     * 用户修改个人信息
+     * @param userCustomer
+     * @return
+     */
+    @Override
+    public void update(UserCustomer userCustomer){
+        if(userCustomer.getCusGender().equals("男")){
+            userCustomer.setCusGender("1");
+        }
+        if(userCustomer.getCusGender().equals("女")){
+            userCustomer.setCusGender("2");
+        }
+
+    }
+
+    /**
      * 顾客注册账户
      * @param userCustomer
      */

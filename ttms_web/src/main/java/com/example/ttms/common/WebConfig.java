@@ -3,6 +3,8 @@ package com.example.ttms.common;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
+//跨域处理
 public class WebConfig implements WebMvcConfigurer {
 
     @Override

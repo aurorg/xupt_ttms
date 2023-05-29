@@ -20,4 +20,6 @@ public interface UserCustomerService {
 
 
     void delete(Integer id);
+
+     void update(UserCustomer userCustomer);
 }
