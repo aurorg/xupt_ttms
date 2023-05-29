@@ -40,6 +40,11 @@ public class UserCustomerController {
         return Result.success();
     }
 
+    /**
+     * 员工根据id删除顾客账号
+     * @param id
+     * @return
+     */
     @DeleteMapping( "/usercustomersdelete/{id}")
     public Result delete(@PathVariable Integer id){
         log.info("员工根据id删除顾客账号：{}",id);
@@ -47,9 +52,7 @@ public class UserCustomerController {
         userCustomerService.delete(id);
         return Result.success();
     }
-
-
-
+    
 
 }
 
