@@ -21,6 +21,8 @@ public class UserCustomerController {
    /**查
      * 员工查询顾客账号
      */
+
+   @CrossOrigin(origins = "http://localhost:8088")
     @GetMapping("/usercustomersget")
     public Result list(){
         log.info("员工查询所有的顾客账号");
@@ -52,7 +54,7 @@ public class UserCustomerController {
         userCustomerService.delete(id);
         return Result.success();
     }
-    
+
 
 }
 
